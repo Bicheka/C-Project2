@@ -26,7 +26,7 @@ int main()
 
 	int election, counter;
 	char again;//to use in the do while to repeat the program again y/n
-	bool error=false; 
+	bool error=false;
 	double lowest, highest = 0,
 		openSum, openAvg,
 		highSum, highAvg,
@@ -36,7 +36,7 @@ int main()
 	//to store the date with the highest and lowest
 	std::string cmpnyName, date, open, high, low, close, lowestDate, highestDate;
 	std::ifstream inputFile;
-		
+
 		//program bucle
 	do
 	{
@@ -48,10 +48,10 @@ int main()
 			lowSum = 0, lowAvg = 0,
 			closeSum = 0, closeAvg = 0;
 		//declare ifstream object instance
-		
-			//choice bucle 
-		
-			
+
+			//choice bucle
+
+
 			//promting the user to select an option from the menu
 			std::cout << "Welcome to Stock Data Analyzer" << std::endl;
 			std::cout << "Please choose from the following options" << std::endl;
@@ -61,7 +61,7 @@ int main()
 				<< "4. Netflix\n"
 				<< "5. Microsoft\n";
 
-			
+
 		do
 		{
 			//if error occurs set error to false again
@@ -94,7 +94,7 @@ int main()
 				inputFile.open("MSFT.csv");
 				cmpnyName = "Microsoft";
 				break;
-			default: 
+			default:
 				//error
 				if (std::cin.fail())
 				{
@@ -104,7 +104,7 @@ int main()
 				//range error
 				else if (election < 1 || election > 5)
 				{
-					std::cout << "Please choose 1,2,3,4,5 or 6 only" << std::endl;
+					std::cout << "Please choose 1,2,3,4, or 5 only" << std::endl;
 					std::cout << "Welcome to Stock Data Analyzer" << std::endl;
 					std::cout << "Please choose from the following options" << std::endl;
 					std::cout << "1. Apple\n"
@@ -132,11 +132,11 @@ int main()
 			exit(EXIT_SUCCESS);
 		}
 
-		// read file until the end 
-		
+		// read file until the end
+
 		while (!inputFile.eof())
 		{
-			//store each section in its variable 
+			//store each section in its variable
 			getline(inputFile, date, ',');
 			getline(inputFile, open, ',');
 			getline(inputFile, high, ',');
@@ -190,7 +190,7 @@ int main()
 		}
 		std::cout << std::endl;
 
-		//defines alignment 
+		//defines alignment
 		std::cout << std::right;
 
 		//print name of the company
@@ -229,11 +229,11 @@ int main()
 		{
 			std::cout << "_";
 		}
-		
+
 		std::cout << std::endl;
 
 		//second header row
-	
+
 		std::cout << std::setw(15) << ""
 			<< std::setw(11) << "Price"
 			<< std::setw(4) << "Date" << std::endl;
@@ -261,11 +261,11 @@ int main()
 
 		inputFile.close();
 
-		 
+
 
 	}while (toupper(again)=='Y');
 
-	
+
 
 	std::cout << "Thank you for using Stock Price Analyzer" << std::endl;
 
